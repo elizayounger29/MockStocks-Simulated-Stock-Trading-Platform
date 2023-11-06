@@ -47,7 +47,7 @@ def lookup(symbol):
     end = datetime.datetime.now(pytz.timezone("US/Eastern"))
     start = end - datetime.timedelta(days=7)
 
-    # Yahoo Finance API
+    # Yahoo finance API
     url = (
         f"https://query1.finance.yahoo.com/v7/finance/download/{urllib.parse.quote_plus(symbol)}"
         f"?period1={int(start.timestamp())}"
