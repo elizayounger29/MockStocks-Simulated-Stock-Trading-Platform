@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <h2> {{ username }}'s Stock Portfolio</h2>
+    <div class="col-6 offset-3">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="row">Stock</th>
+                    <th scope="row">Shares</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for symbol, quantity in portfolio.items() %}
+                    <tr>
+                        <th scope="row">{{ symbol }}</th>
+                        <td>{{ quantity }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="col-6 offset-3">
+        <h2> {{ username }}'s Current Balance: {{ balance }}</h2>
+        <br>
+        <form action="/" method="post">
+            <button class="btn btn-primary" type="submit">Add To Balance</button>
+        </form>
+    </div>
+
+{% endblock %}
+

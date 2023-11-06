@@ -1,0 +1,57 @@
+************************ TABLE STRUCTURES ************************
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS purchase_history;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    username TEXT NOT NULL,
+    hash TEXT NOT NULL,
+    cash NUMERIC NOT NULL DEFAULT 10000.00);
+
+CREATE TABLE sqlite_sequence(
+    name,
+    seq);
+
+CREATE UNIQUE INDEX username
+ON users (username);
+
+CREATE TABLE purchase_history (
+    purchase_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    action TEXT CHECK (action IN ('buy', 'sell')),
+    time NUMERIC,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE inputs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    input TEXT NOT NULL);
+
+INSERT INTO users (username, hash)
+VALUES ('eliza', 'scrypt:32768:8:1$XoxyxG4jRyzNfP2P$df61a959aa72e026b17028e961e77acd682ac51e44911ceb49fd35c2b70ff2d0ab49fbeb7e30b8339cc2c777c65e20ff7f5aba0630866eb107c3dfe333b9798a');
+
+INSERT INTO purchase_history (user_id, symbol, quantity, price, action, time)
+VALUES
+(1, 'nflx', 5, 500, 'buy', '2023-10-20 16:45:30'),
+(1, 'aapl', 2, 200, 'buy', '2023-10-20 16:45:30'),
+(1, 'nflx', 5, 500, 'sell', '2023-10-20 16:45:30'),
+(1, 'nflx', 5, 500, 'buy', '2023-10-20 16:45:30');
+
+
+************************    CHECK IT WORKED    ************************
+
+SELECT * FROM users;
+SELECT * FROM purchase_history;
+
+************************    DONT USE    ************************
+
+CREATE UNIQUE INDEX user_portfolio
+ON purchase_history (user_id);
+
+************************ QUERY PRACTICE ************************
+
+SELECT cash FROM users WHERE id = session["user_id"];

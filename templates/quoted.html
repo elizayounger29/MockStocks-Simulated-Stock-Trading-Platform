@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <h2>Stocks</h2>
+    <div class="col-6 offset-3">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="row">Stock</th>
+                    <th scope="row">Stock Value</th>
+                    <th scope="row">Stock Symbol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                <tr>
+                    <th scope="row">{{ stock["name"] }}</th>
+                    <td>{{ stock["price"] }}</td>
+                    <td>{{ stock["symbol"] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

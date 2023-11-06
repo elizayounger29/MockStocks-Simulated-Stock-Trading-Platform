@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+    <h2> {{ username }}'s History</h2>
+    <div class="col-6 offset-3">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="row">Purchase_ID</th>
+                    <th scope="row">Symbol</th>
+                    <th scope="row">Quantity</th>
+                    <th scope="row">Price</th>
+                    <th scope="row">Action</th>
+                    <th scope="row">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for entry in history %}
+                    <tr>
+                        <td>{{ entry["purchase_id"] }}</td>
+                        <td>{{ entry["symbol"] }}</td>
+                        <td>{{ entry["quantity"] }}</td>
+                        <td>{{ entry["price"] }}</td>
+                        <td>{{ entry["action"] }}</td>
+                        <td>{{ entry["time"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+
