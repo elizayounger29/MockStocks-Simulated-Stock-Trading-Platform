@@ -11,9 +11,6 @@ MockStocks, a web app via which you can manage virtual portfolios of stocks. Not
 
 4. **User Interface and Experience**: Design an intuitive and user-friendly interface, providing real-time stock price updates and notifications to enhance user engagement.
 
-## System Architecture
-![Alt Screenshots](static/finance_system_architecture.png)
-
 
 ## Installation
 To set up, follow these steps:
@@ -46,6 +43,11 @@ To set up, follow these steps:
 
     ```bash
     ctrl c
+
+
+## System Architecture
+![Alt Screenshots](static/finance_system_architecture.png)
+
 
 ## Screenshots
 
