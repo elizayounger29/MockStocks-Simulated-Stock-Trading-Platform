@@ -5,7 +5,7 @@ MockStocks, a web app via which you can manage virtual portfolios of stocks. Not
 ## Project Objectives
 1. **Simulated Stock Trading Web Application**: Develop a web application that enables users to manage virtual portfolios of stocks, including buying and selling stocks based on real-time prices.
 
-2. **Virtual Stock Portfolio Management**: Enable users to create, customize, and manage virtual stock portfolios, including tracking portfolio performance.
+2. **Virtual Stock Portfolio Management**: Enable users to create, customize, and manage virtual stock portfolios.
 
 3. **User Authentication and Registration**: Create a secure user authentication and registration system to safeguard user data and provide a personalized experience.
 
